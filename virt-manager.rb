@@ -42,7 +42,7 @@ class VirtManager < Formula
   def install
     # update location of cpu_map.xml
     # https://github.com/jeffreywildman/homebrew-virt-manager/issues/15
-    inreplace "virtinst/capabilities.py", "/usr/share/libvirt/cpu_map.xml", "#{HOMEBREW_PREFIX}/share/libvirt/cpu_map.xml"
+    inreplace "virtinst/capabilities.py", "/usr/local/share/libvirt/cpu_map.xml", "#{HOMEBREW_PREFIX}/share/libvirt/cpu_map.xml"
 
     ENV.prepend_create_path "PYTHONPATH", "#{libexec}/vendor/lib/python2.7/site-packages"
     %w[libvirt-python requests ipaddr].each do |r|
